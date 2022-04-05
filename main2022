@@ -12,7 +12,12 @@ def run():
     gun = Gun(screen)
     bullets = Group()
 
+    fon = pygame.image.load('image/y.webp')
+    rect7 = fon.get_rect()
+
+
     while True:
+        screen.blit(fon, rect7)
         controls.events(screen,gun,bullets)
         gun.update_gun()
         gun.update_gun2()
