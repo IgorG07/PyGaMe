@@ -55,7 +55,7 @@ def events(screen,gun, bullets):
                 gun.kdown2 = False
 
 def update(bg_color, screen, gun, bullets):
-    screen.fill(bg_color)
+   # screen.fill(bg_color)
     for bullet in bullets.sprites():
         bullet.drawBullet()
     gun.output()
