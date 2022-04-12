@@ -20,18 +20,19 @@ while True:
 
         if ev.type == pygame.MOUSEBUTTONDOWN:
 
-            if width / 2 <= mouse[0] <= width / 2 + 140 and height / 2 <= mouse[1] <= height / 2 + 40:
+            if  230 <= mouse[0] <=  500 and  183 <= mouse[1] <=  223:
                 pygame.quit()
                 import main
     screen.fill((60, 25, 60))
     mouse = pygame.mouse.get_pos()
-
-    if width / 2 <= mouse[0] <= width / 2 + 140 and height / 2 <= mouse[1] <= height / 2 + 40:
-        pygame.draw.rect(screen, color_light, [width / 2, height / 2, 140, 40])
+    print("x =", mouse[0],'y =', mouse[1])
+    if  230 <= mouse[0] <=  500 and  183 <= mouse[1] <=  223:
+        pygame.draw.rect(screen, color_light, [ 230,   184, 270, 40])
 
     else:
-        pygame.draw.rect(screen, color_dark, [width / 2, height / 2, 140, 40])
+        pygame.draw.rect(screen, color_dark, [ 230, 184, 270, 40])
+    screen.blit(text, ( 343,  185))
 
-    screen.blit(text, (width / 2 + 50, height / 2))
+
 
     pygame.display.update()
