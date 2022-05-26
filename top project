@@ -1,0 +1,74 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+import os
+
+
+
+class Ui_Dialog(object):
+    def GAME3(self):
+        print(3)
+        #os.sistem("GAME.bat")
+
+    def GAME4(self):
+        print(4)
+        import kalkulator
+        os.system("game.bat")
+
+    def GAME2(self):
+        print(2)
+        #os.sistem("GAME.bat")
+
+    def GAME(self):
+        print(1)
+        import menu
+        #os.sistem("GAME.bat")
+
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(400, 300)
+        self.toolButton = QtWidgets.QToolButton(Dialog)
+        self.toolButton.setGeometry(QtCore.QRect(100, 20, 191, 41))
+        self.toolButton.setStyleSheet("background-color: rgb(38, 132, 255);")
+        self.toolButton.setObjectName("toolButton")
+        self.toolButton.clicked.connect(self.GAME)
+
+
+        self.toolButton_3 = QtWidgets.QToolButton(Dialog)
+        self.toolButton_3.setGeometry(QtCore.QRect(100, 130, 191, 41))
+        self.toolButton_3.setStyleSheet("background-color: rgb(238, 255, 46);")
+        self.toolButton_3.setObjectName("toolButton_3")
+        self.toolButton_3.clicked.connect(self.GAME3)
+
+
+        self.toolButton_4 = QtWidgets.QToolButton(Dialog)
+        self.toolButton_4.setGeometry(QtCore.QRect(100, 80, 191, 41))
+        self.toolButton_4.setStyleSheet("background-color: rgb(255, 35, 38);")
+        self.toolButton_4.setObjectName("toolButton_4")
+        self.toolButton_4.clicked.connect(self.GAME2)
+
+        self.toolButton_5 = QtWidgets.QToolButton(Dialog)
+        self.toolButton_5.setGeometry(QtCore.QRect(100, 180, 191, 41))
+        self.toolButton_5.setStyleSheet("background-color: rgb(238, 255, 46);")
+        self.toolButton_5.setObjectName("toolButton_5")
+        self.toolButton_5.clicked.connect(self.GAME4)
+
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.toolButton.setText(_translate("Dialog", "PyGame"))
+        self.toolButton_3.setText(_translate("Dialog", "Cv2"))
+        self.toolButton_4.setText(_translate("Dialog", "Django"))
+        self.toolButton_5.setText(_translate("Dialog", "PyQt5"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
